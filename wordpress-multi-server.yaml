@@ -689,15 +689,15 @@ outputs:
     description: WordPress Password
 
   database_server_ip:
-    value: { get_attr: [database_server, networks, private, 0] }
+    value: { get_attr: [database_server, networks, { get_param: rackconnect_network_name }, 0] }
     description: Database Server IP
 
   wordpress_web_master_ip:
-    value: { get_attr: [wp_master_server, networks, private, 0] }
+    value: { get_attr: [wp_master_server, networks, { get_param: rackconnect_network_name }, 0] }
     description: Web-Master IP
 
   wordpress_web_ips:
-    value: { get_attr: [wp_web_servers, networks, private, 0] }
+    value: { get_attr: [wp_web_servers, networks, { get_param: rackconnect_network_name }, 0] }
     description: Web Server IPs
 
   mysql_root_password:
