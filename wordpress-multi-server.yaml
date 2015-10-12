@@ -697,7 +697,7 @@ outputs:
     description: Web-Master IP
 
   wordpress_web_ips:
-    value: { get_attr: [wp_web_servers, networks, { get_param: rackconnect_network_name }, 0] }
+    value: { get_attr: [wp_web_servers, rackconnectIPv4] }
     description: Web Server IPs
 
   mysql_root_password:
